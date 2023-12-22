@@ -12,8 +12,16 @@ const create = newObject => {
 }
 
 const update = (id, newObject) => {
-  const request = axios.put(`${baseUrl}/${id}`, newObject)
-  return request.then(response => response.data)
+  console.log("update from front-end")
+  console.log(baseUrl)
+  console.log(id)
+  const request = axios.put(`${baseUrl}/${id}`, newObject).then(response => {
+    console.log(response)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+  // return request.then(response => response.data)
 }
 
 export default { 
